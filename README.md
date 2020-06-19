@@ -24,7 +24,8 @@ You will be plotting your data using the open statistical software R (https://ww
 You will code a little “script” - a text file with all the instructions to plot the data - and you will be able to use this script in the MCQ exam to analyse a dataset I provide there in exactly the same way.
 
 
-!(groundfinch) [https://www.flickr.com/photos/stefanocieri/8053640885/]
+![groundfinch](finch_cieri.png)<img src="https://github.com/finch_cieri.png" height="60" width="100">
+
 
 Photo credit: https://www.flickr.com/photos/stefanocieri/
 
