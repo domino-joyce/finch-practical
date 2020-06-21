@@ -5,3 +5,8 @@ You have a dataset (download from Canvas) which consists of beak depth measureme
 The third column is beak depths for 216 adult wild birds, measured in 1977. The fourth column is the fitness of those birds- a zero indicates that they didn’t reproduce, a 1 indicates that they did. The fifth column contains the beak depths of the offspring from the fourth column (136 birds).
 
 Finally, I have included some beak depth data from the same species but a population from another island- El Garruptero. These data were collected in 2004. (The paper these data are from actually uses principal components rather than beak depth, so the data combine a number of traits. For simplicity and consistency, I have interpreted it for this practical as beak depth, since beak depth is the major contributor to principal component 1).
+
+
+[Contribution guidelines for this project](darwin finch data.csv)
+
+
