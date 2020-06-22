@@ -23,7 +23,7 @@ Working through this practical should help you plot and interpret data collected
 
 You will be plotting your data using the open statistical software R (https://www.r-project.org/), because developing these skills will come in useful for your final year, and will look great on your CV. You may even enjoy it.
 
-You will code a little “script” - a text file with all the instructions to plot the data - and you will be able to use this script in the MCQ exam to analyse a dataset I provide there in exactly the same way.
+You will code a little “script” - a text file with all the instructions to plot the data - and you will be able to use this script in the MCQ exam to analyse a dataset I provide there in exactly the same way. Head to [finch-instructions.md](finch-instructions.md) to get started.
 
 ---
 <img src="./finch_cieri.png" height="350" width="500">
