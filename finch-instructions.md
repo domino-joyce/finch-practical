@@ -10,7 +10,7 @@ Finally, I have included some beak depth data from the same species but a popula
 Image credit: Forest and Kim Star https://www.flickr.com/people/97499887@N06
 
 
-First, on the finch-practical main page https://github.com/domino-joyce/finch-practical you'll see at the top right, a green "Clone or Download" button. Click this, and save the zip file somewhere on your computer. Unzip the file, and you will find the data .csv files you need.
+First, on the finch-practical main page https://github.com/domino-joyce/finch-practical you'll see at the top right, a green "Clone or Download" button. Click this, and save the zip file somewhere on your computer. Make sure you know where. Unzip the file, and you will find the data .csv files you need.
 
 # Opening and using R
 
@@ -167,13 +167,106 @@ To work out the mean bill depth, use:
 mean(mydata$bill_depth_mm_1977, na.rm=TRUE)
 ```
 
-The na.rm=TRUE part of the code removes missing values.
+The **na.rm=TRUE** part of the code removes missing values. Missing values in R are coded as NA.
 
 Which beak depth was the most frequent in 1977?
 What was the mean beak depth in 1977?
 
 
+Late in 1977 there was a severe drought, which affected the seed availability. Most spurge plants died, so there were not many of the small seeds available to the ground finches. Only a small number of finches were able to reproduce that year, and you can see this in the “X1977_reproduced” column. Most of the values are zeros.
 
+How much beak variation in birds that reproduce is there?
+
+Have you saved your script recently?
+
+Let’s look at the data for those birds that did manage to reproduce. We want to make a histogram to show the number of individuals with each beak depth, but only for those that reproduced.
+
+```
+with(mydata, hist(bill_depth_mm_1977[X1977_reproduced==1]))
+```
+
+(Again, you should be able to add your own code to label the graph properly).
+
+Of the birds that reproduced, which beak depth was the most frequent?
+Is this higher or lower than the mean beak depth for the 1977 population as a whole?
+
+Because of the drought, birds with large beaks that could process the other, larger, caltrop seeds, tended to be the ones who survived to reproduce.
+
+To work out the mean beak depth of the birds that reproduced, use:
+
+```
+with(mydata, mean(bill_depth_mm_1977[X1977_reproduced==1]))
+```
+
+You can now work out the **selection differential**. This is simply the mean bill depth of the birds that contributed to the next generation, minus the mean bill depth of all the birds in the population.
+
+```
+breeders<-with(mydata, mean(bill_depth_mm_1977[X1977_reproduced==1]))
+all<-mean(mydata$bill_depth_mm_1977, na.rm=TRUE)
+
+selectiondifferential <- breeders - all
+```
+
+To get the selection differential, you now need to get R to print it, by typing:
+
+```
+selectiondifferential
+```
+
+# Predicting the Evolutionary Response to Selection
+
+<p align="center">
+<img src="./response_to_selection.png" height="35" width="120">
+
+We can use this equation to work out what the response to selection will be. We already know h2 from the slope of the mid-parent offspring plot. S is the selection differential you have just worked out. Simply multiply these two to get the response to selection, which is the
+mean trait change in the next generation.
+
+**Testing the prediction**  
+
+We have the data on beak depth from the offspring that survived in 1978, in the column “offspring_bill_depth_mm_1978”.
+
+Use your R coding skills to plot a histogram of these data and identify the most frequent bill depth found in 1978. You should also be able to calculate the mean beak depths in 1978. Are they bigger?
+What about populations on other islands?
+Plot a histogram of bill depths in this species from individuals on El Garrapatero, a different island. The data is in the column “El_G_2004”.
+
+What could be going on there?
+
+
+## Other useful R tips  
+
+Before starting with the new analysis delete everything from the memory of R to avoid over-riding issues with variable names and outputs that might compromise your results with the next set of data. Erase the R memory by running the following code:
+
+```
+rm(list=ls())
+```
+If you want to make a window with multiple panels which you then populate with all your plots, you can use this code:
+```
+	par(mfrow=c(2,3))
+```
+This makes a window with 2 rows and 3 columns, which will open and be blank to start with. It will fill with the plots you make as you go along. You can change the number of rows and columns as you see fit.
+
+
+In R, there are many ways of scripting the same outcome. Here are some alternative scripts for the selection differential calculations. What are the differences?
+
+```
+rep=subset(mydata,X1977_reproduced==1)
+hist(rep$bill_depth_mm_1977)
+mean(rep$bill_depth_mm_1977,na.rm=T)
+bred=mean(rep$bill_depth_mm_1977,na.rm=T)
+tot=mean(mydata$bill_depth_mm_1977,na.rm=T)
+sd=bred-tot
+sd
+```
+
+Well done - you've finished!
+
+<p align="center">
+  <br><br>
+  <img src="https://media.giphy.com/media/gpXfKa9xLAR56/giphy.gif">
+
+</p>
+
+Now go to the Canvas quiz and fill in your answers to the questions to make sure you understand the evolutionary biology behind what you have done.
 
 
 
