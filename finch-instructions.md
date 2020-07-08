@@ -81,7 +81,7 @@ dim(mydata)
 To give you the dimensions of the data file (216 observations in 6 columns). I also often use
 
 ```
-	head(mydata)
+head(mydata)
 ```
 which shows the top few rows of data. Each time, check the console window to see that it is showing you what you expect to see. Note that R calls a table of data a ‘data.frame’. R tells us that the data.frame ‘mydata’ has 216 observations, and 6 variables, whose names are parent_beak_depth_mm, offspring_beak_depth_mm, bill_depth_mm_1977,  X1977_reproduced, offspring_bill_depth_mm_1978, and El_G_2004.
 
@@ -144,7 +144,7 @@ abline(slope)
 You could also use:
 
 ```
-	abline(lm(mydata$offspring_beak_depth_mm ~mydata$parent_beak_depth_mm))
+abline(lm(mydata$offspring_beak_depth_mm ~mydata$parent_beak_depth_mm))
 ```
 
 # How much variation in finch bill depth in the wild is there?
@@ -158,7 +158,7 @@ hist(mydata$bill_depth_mm_1977)
 Now add your own code to label the x and y axes properly, and add a title, by using the same code from the scatter plot, and changing the text. If you want to make the graph in a new window, use the following before the code for the plot:
 
 ```
-	windows()
+windows()
 ```
 
 To work out the mean bill depth, use:
@@ -241,7 +241,7 @@ rm(list=ls())
 ```
 If you want to make a window with multiple panels which you then populate with all your plots, you can use this code:
 ```
-	par(mfrow=c(2,3))
+par(mfrow=c(2,3))
 ```
 This makes a window with 2 rows and 3 columns, which will open and be blank to start with. It will fill with the plots you make as you go along. You can change the number of rows and columns as you see fit.
 
