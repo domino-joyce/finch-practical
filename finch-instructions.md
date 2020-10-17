@@ -10,15 +10,15 @@ Finally, I have included some beak depth data from the same species but a popula
 Image credit: Forest and Kim Starr https://www.flickr.com/people/97499887@N06
 
 
-First, on the finch-practical main page https://github.com/domino-joyce/finch-practical you'll see at the top right, a green "Clone or Download" button. Click this, and save the zip file somewhere on your computer. Make sure you know where. Unzip the file, and you will find the data .csv files you need.
+First, make yourself a folder in which you will work.
 
-# Opening and using R
+Then, on the finch-practical main page https://github.com/domino-joyce/finch-practical you'll see at the top right, a green "Clone or Download" button. Click this, and save the zip file to the folder you just made. Unzip the file, and you will find the data .csv files you need.
 
-To start the program click on Start -> All Programs -> R -> Ri64.  Make sure you select the fastest version, i. e. Ri64 (not Ri32). R is a command line based software, i.e. you need to do a bit of programming and use codes. Once you open R you see the R Console window with the information on the version of R you are using – The R Console is where R runs all commands you ask for and returns the output. The symbol > in the R Console indicates that R is waiting for a command.
+# Opening and using R in RStudio
 
-Click on **File** and select the option **New Script** (or **New Document** on a Mac). A new window appears: this is your ‘Script’ editing window – here is where you can type your commands, annotate them and save them for future use.
+To start the program from a Windows machine, click on Start -> All Programs -> RStudio, or on a Mac open the app. R is a command line based R Console software, i.e. you need to do a bit of programming and use codes. Doing this within RStudio makes it a bit easier. Once you open RStudio you will see different windows – The R Console on the left hand side is where we will run all the commands. The symbol > in the R Console indicates that R is waiting for a command.
 
-Save your Script where you want to keep your work: Click **File -> Save As…** and give it a name followed by the extension **.R**  **Save your work very frequently**. Note that this is a common text file that you can also open with any text editing software afterwards.
+Click on **File** and select the option **New Project**. Give your project a name. It will automatically be saving everything to the folder you made. Next, make a new script by clicking on **File** and then **New File** and then **R script**. A new window appears: this is your ‘Script’ editing window – here is where you can type your commands, annotate them and save them for future use. Click this window, go to **File** and **Save As** and give it a name followed by the extension **.R**  **Save your work very frequently**. Note that this is a common text file that you can also open with any text editing software afterwards.
 
 Annotations in the Script window must be preceded by the symbol ‘#’ so that they will not be read as command codes by R. Do make sure that all your annotations are preceded by this symbol. Annotations are just notes to yourself or other people about what your code does. Well annotated code will help you when you come back to it.
 
@@ -134,8 +134,10 @@ The R console should show you both the intercept (the number on the left), and t
 
 If you want to add a line to your plot, you can use the function **abline()**, and tell it to add the regression line you have already calculated. The easiest way to do this is to send the function above, to something easier to type using the <-
 
-```
 For example:
+
+```
+
 slope<-lm(mydata$offspring_beak_depth_mm ~mydata$parent_beak_depth_mm)
 slope
 abline(slope)
