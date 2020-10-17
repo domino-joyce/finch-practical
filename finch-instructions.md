@@ -18,35 +18,36 @@ Then, on the finch-practical main page https://github.com/domino-joyce/finch-pra
 
 To start the program from a Windows machine, click on Start -> All Programs -> RStudio, or on a Mac open the app. R is a command line based R Console software, i.e. you need to do a bit of programming and use codes. Doing this within RStudio makes it a bit easier. Once you open RStudio you will see different windows – The R Console on the left hand side is where we will run all the commands. The symbol > in the R Console indicates that R is waiting for a command.
 
-Click on **File** and select the option **New Project**. Give your project a name. It will automatically be saving everything to the folder you made. Next, make a new script by clicking on **File** and then **New File** and then **R script**. A new window appears: this is your ‘Script’ editing window – here is where you can type your commands, annotate them and save them for future use. Click this window, go to **File** and **Save As** and give it a name followed by the extension **.R**  **Save your work very frequently**. Note that this is a common text file that you can also open with any text editing software afterwards.
+Click on **File** and select the option **New Project**. Give your project a name. Next, make a new script by clicking on **File** and then **New File** and then **R script**. A new window appears: this is your ‘Script’ editing window – here is where you can type your commands, annotate them and save them for future use. Click this window, go to **File** and **Save As** and give it a name followed by the extension **.R**  **Save your work very frequently**. Note that this is a common text file that you can also open with any text editing software afterwards.
 
-Annotations in the Script window must be preceded by the symbol ‘#’ so that they will not be read as command codes by R. Do make sure that all your annotations are preceded by this symbol. Annotations are just notes to yourself or other people about what your code does. Well annotated code will help you when you come back to it.
+Now we will choose our working directory for this session. Go to **Session** then **Set Working Directory** then **Choose Directory** and choose the directory you unzipped your files to (it will be called finch-practical-master). 
 
-You can for example start annotating this file by typing in the Script window and press return:
+Now we are ready to start.
+
+We will type code into the script window, and then execute it by sending it to the Console below. 
+
+As we go along, you will need to make a note of what each line of code does, so you should add annotations in the script. These are notes to yourself (and other people) and will not be read into the console as long as they are preceded by the symbol ‘#’. Do make sure that all your annotations are preceded by this symbol.  Well annotated code will really help you when you come back to it.
+
+Let's start by adding a note to explain what we are doing in this exercise. Type this in the Script window:
 
 ```
   #Darwin finch analysis- parent-offspring regression
 ```
 
-To import the data into R you first need specify in which folder R can find the data file. R calls folders ‘directories’. You can set the working directory for your R session as the place you have saved the zip file. Type the following command in your script window and press Return:
-
-```
-setwd("G:/Desktop")
-```
-
-The command setwd tells R to ‘set the working directory’ to the folder whose path is given in brackets within the speech marks. Here, we ask to go to the Desktop in your G: drive where you should have saved the finch data file. If you have saved the datafiles elsewhere you need to change the pathway within the speech marks accordingly. You can annotate this code by writing its meaning above it (or on the side) and preceding the annotation with the ‘#’ symbol.
-
-```
-setwd("G:/Desktop")		#set the working directory to the desktop
-```
-
-Note that the command is not yet live and nothing has happened in the R console. To execute the command, highlight the code in the script window and then press simultaneously the keys Ctrl and r. If you are on a Mac, highlight the line of code and press simultaneously cmd + Enter. Alternatively, you can highlight the code, right click and select the ‘Run line’ option. All these options send the command to the R Console. To check that R has gone to the correct folder, type in the Script window and run the command:
+We will now add some commands in our script and send them to the console. The first thing we will do is check to see what our working directory is - this should just show the filepath that we chose earlier. Type the code:
 
 ```
 getwd()
 ```
 
-With this command R returns the path to the currently active directory in the Console window, i.e. the folder you have chosen and where R saves your script file. Now, import the data file by running the code:
+into the script.
+
+Note that the command is not yet live and nothing has happened in the R console. To execute the command, put your cursor in the line of code somewhere in the script window and then press simultaneously the keys Windows: Ctrl and r or Mac: cmd + Enter. Alternatively, you can highlight the code and click **Run** with the green arrow above the script window. All these options send the command to the R Console. 
+
+When the command has been sent successfully to the console, you will see it successfully executed. If there is an error, you will get a red message, otherwise, your code will appear in the console with the result. Here, it should display the filepath showing where you saved your files.
+
+
+Now, we're ready to import our data file by running the code:
 
 ```
 mydata<-read.csv("darwin finch data.csv", header = T)
@@ -56,7 +57,7 @@ The **read.csv** command tells R that the data file is a csv file (comma separat
 
 Everything on the right hand side of the **<-** gets sent to a thing called mydata once you execute this command.
 
-NOTE. Because R works with codes, it is paramount that you do type the codes exactly as indicated. The vast majority of errors are due to typos, missing code elements, brackets or speech marks that are not open or closed, etc. R is also case sensitive. If you get an error message, do check these sources of error first.
+NOTE. Because R works with codes, it is paramount that you do type the codes exactly as indicated. The vast majority of errors are due to typos, missing code elements, brackets or speech marks that are not open or closed, etc. R is also case sensitive. If you get an error message, do check these sources of error first. RStudio will help you by highlighting problems in the script with a little red cross.
 
 Save your script.
 
@@ -66,13 +67,13 @@ To check the data have been correctly imported, run the following code:
 names(mydata)
 ```
 
-This should show you the heading of each column.
+When this runs in the console, it should show you the heading of each column of data. You can also look in the top right window - it tells you that there is a dataset called "mydata" and it consists of 216 observations and 6 variables.
 
 ```
 str(mydata)
 ```
 
-This will give you the structure of the data- there are 216 observations and 6 variables (columns). You can also use
+This will give you the structure of the data- there are 216 observations and 6 variables (columns), and it will tell you whether the variables are numeric or not. You can also use
 
 ```
 dim(mydata)
