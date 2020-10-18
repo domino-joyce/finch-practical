@@ -277,8 +277,7 @@ Well done - you've finished!
 
 </p>
 
-Now go to the Canvas quiz and fill in your answers to the questions to make sure you understand the evolutionary biology behind what you have done.
-
+There are some practise datasets on Canvas for you to try out, and I will be in a Teams meeting on the Evolution site from 12-1 every day this week so that you can drop in and get help.
 
 
 
