@@ -7,7 +7,7 @@ The third column is beak depths for 216 adult wild birds, measured in 1977. The 
 Finally, I have included some beak depth data from the same species but a population from another island- El Garruptero. These data were collected in 2004 <sup>1</sup>.
 
 ![image](https://upload.wikimedia.org/wikipedia/commons/8/88/Starr-130601-4620-Eucalyptus_sp-habitat_with_juvenile_Northern_Cardinal_being_measured-Hawea_Pl_Olinda-Maui_%2825118098841%29.jpg)
-Image credit: Forest and Kim Starr https://www.flickr.com/people/97499887@N06
+Image credit: Forest and Kim Starr https://www.flickr.com/people/97499887@N06 (not the right species, but the only picture of a beak being measured I could find which had permission for use).
 
 
 First, make yourself a folder in which you will work.
