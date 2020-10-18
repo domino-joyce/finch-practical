@@ -10,6 +10,8 @@ Finally, I have included some beak depth data from the same species but a popula
 Image credit: Forest and Kim Starr https://www.flickr.com/people/97499887@N06 (not the right species, but the only picture of a beak being measured I could find which had permission for use).
 
 
+
+
 First, make yourself a folder in which you will work.
 
 Then, on the finch-practical main page https://github.com/domino-joyce/finch-practical you'll see at the top right, a green "Clone or Download" button. Click this, and save the zip file to the folder you just made. Unzip the file, and you will find the data .csv files you need.
