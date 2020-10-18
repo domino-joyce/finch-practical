@@ -110,7 +110,7 @@ Make a scatterplot of parent beak depth against offspring beak depth using the *
 plot(mydata$parent_beak_depth_mm, mydata$offspring_beak_depth_mm)
 ```
 
-R should now have opened a graphics window containing your plot. Does it look as if there is a strong relationship between parent and offspring beak size?
+There should now be a plot in the bottom right window of RStudio... congratulations! You have made your first plot in R! Does it look as if there is a strong relationship between parent and offspring beak size?
 
 We can make the graph look a little more professional by adding clear axes labels and a title, using the following code:
 
@@ -131,20 +131,20 @@ The slope of this line, gives you an estimate of the **narrow sense heritability
 lm(mydata$offspring_beak_depth_mm ~mydata$parent_beak_depth_mm)
 ```
 
-The R console should show you both the intercept (the number on the left), and the slope of the line (the number on the right), which is the narrow sense heritability. The closer this number is to 1, the higher the heritability. A low number here (less than about 0.35) means there is not a clear relationship between parents and offspring, and therefore no clear genetic component to the trait, which means it would be difficult for selection to act on this trait.
+The console should show you both the intercept (the number on the left), and the slope of the line (the number on the right), which is the narrow sense heritability. The closer this number is to 1, the higher the heritability. A low number here (less than about 0.35) means there is not a clear relationship between parents and offspring, and therefore no clear genetic component to the trait, which means it would be difficult for selection to act on this trait.
 
-If you want to add a line to your plot, you can use the function **abline()**, and tell it to add the regression line you have already calculated. The easiest way to do this is to send the function above, to something easier to type using the <-
+If you want to add a line to your plot, you can use the function **abline()**, and tell it to add the regression line you have just calculated using **lm()**. The easiest way to do this is to send the function above, to something easier to type using the <-
 
 For example:
 
 ```
 
-slope<-lm(mydata$offspring_beak_depth_mm ~mydata$parent_beak_depth_mm)
-slope
-abline(slope)
+model<-lm(mydata$offspring_beak_depth_mm ~mydata$parent_beak_depth_mm)
+model
+abline(model)
 ```
 
-You could also use:
+You could also use this, which is another way of issuing the same command:
 
 ```
 abline(lm(mydata$offspring_beak_depth_mm ~mydata$parent_beak_depth_mm))
@@ -158,12 +158,7 @@ To get an idea how much variation there is in the wild, at least for 1977, we ca
 hist(mydata$bill_depth_mm_1977)
 ```
 
-Now add your own code to label the x and y axes properly, and add a title, by using the same code from the scatter plot, and changing the text. If you want to make the graph in a new window, use the following before the code for the plot:
-
-```
-windows()
-```
-
+Now add your own code to label the x and y axes properly, and add a title, by using the same code from the scatter plot, and changing the text. You can switch between the plots you have made using the blue arrows at the top of the bottom right pane.
 To work out the mean bill depth, use:
 
 ```
@@ -205,16 +200,25 @@ You can now work out the **selection differential**. This is simply the mean bil
 
 ```
 breeders<-with(mydata, mean(bill_depth_mm_1977[X1977_reproduced==1]))
+#mean bill depth of birds that reproduced
+```
+In the top right pane, you can see the values for these as you make them (and this helps you keep track of what you have called different items)
+
+```
+
 all<-mean(mydata$bill_depth_mm_1977, na.rm=TRUE)
+#mean bill depth of all birds
 
 selectiondifferential <- breeders - all
 ```
 
-To get the selection differential, you now need to get R to print it, by typing:
+To get the selection differential, you could get R to print it, by typing:
 
 ```
 selectiondifferential
 ```
+but you can also find it in the top right pane.
+
 
 # Predicting the Evolutionary Response to Selection
 
@@ -223,6 +227,10 @@ selectiondifferential
 
 We can use this equation to work out what the response to selection will be. We already know h2 from the slope of the mid-parent offspring plot. S is the selection differential you have just worked out. Simply multiply these two to get the response to selection, which is the
 mean trait change in the next generation.
+
+```
+response<-0.69*selectiondifferential
+```
 
 **Testing the prediction**  
 
@@ -237,12 +245,12 @@ What could be going on there?
 
 ## Other useful R tips  
 
-Before starting with the new analysis delete everything from the memory of R to avoid over-riding issues with variable names and outputs that might compromise your results with the next set of data. Erase the R memory by running the following code:
+Before starting with the new analysis delete everything from the memory of R to avoid over-riding issues with variable names and outputs that might compromise your results with the next set of data. RStudio makes this easier by showing everything stored in the top right pane. Erase the R memory by running the following code:
 
 ```
 rm(list=ls())
 ```
-If you want to make a window with multiple panels which you then populate with all your plots, you can use this code:
+If you want to make a plot window with multiple panels which you then populate with all your plots, you can use this code:
 ```
 par(mfrow=c(2,3))
 ```
