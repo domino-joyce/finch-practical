@@ -135,6 +135,8 @@ lm(mydata$offspring_beak_depth_mm ~mydata$parent_beak_depth_mm)
 
 The console should show you both the intercept (the number on the left), and the slope of the line (the number on the right), which is the narrow sense heritability. The closer this number is to 1, the higher the heritability. A low number here (less than about 0.35) means there is not a clear relationship between parents and offspring, and therefore no clear genetic component to the trait, which means it would be difficult for selection to act on this trait.
 
+Note that when using the tilde sign ~ on the left hand side should be the response variable, and on the right hand side should be the explanatory variable. For example, we're trying to see to what extent parent beak depth explains offspring beak depth. We therefore need parent beak depth on the right hand side.
+
 If you want to add a line to your plot, you can use the function **abline()**, and tell it to add the regression line you have just calculated using **lm()**. The easiest way to do this is to send the function above, to something easier to type using the <-
 
 For example:
