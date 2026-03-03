@@ -12,21 +12,21 @@ Image credit: Forest and Kim Starr https://www.flickr.com/people/97499887@N06 (n
 
 
 
-First, make yourself a folder in which you will work.
+First, make yourself a folder (or directory) in which you will work.
 
-Then, on the finch-practical main page https://github.com/domino-joyce/finch-practical you'll see at the top right, a green "Code" button. Click this to get the drop down menu, and save the zip file to the folder you just made. Unzip the file, and you will find the data .csv files you need.
+Then, on the finch-practical main page https://github.com/domino-joyce/finch-practical you'll see at the top right, a green "Code" button. Click this to get the drop down menu, and save the zip file to the folder you just made. Unzip the file (right click, and choose "extract to here" or similar), and all the data .csv files you need will now be in a folder called finch-practical-master.
 
 # Opening and using R in RStudio
 
 To start the program from a Windows machine, click on Start -> All Programs -> RStudio, or on a Mac open the app. R is a command line based R Console software, i.e. you need to do a bit of programming and use codes. Doing this within RStudio makes it a bit easier. Once you open RStudio you will see different windows – The R Console on the left hand side is where we will run all the commands. The symbol > in the R Console indicates that R is waiting for a command.
 
-Click on **File** and select the option **New Project**. Give your project a name. Next, make a new script by clicking on **File** and then **New File** and then **R script**. A new window appears: this is your ‘Script’ editing window – here is where you can type your commands, annotate them and save them for future use. Click this window, go to **File** and **Save As** and give it a name followed by the extension **.R**  **Save your work very frequently**. Note that this is a common text file that you can also open with any text editing software afterwards.
+Click on **File** and select the option **New File** and then **R script**. A new window appears: this is your ‘Script’ editing window – here is where you can type your commands, annotate them and save them for future use. Click this window, go to **File** and **Save As** and give it a name followed by the extension **.R** Save this script file somewhere you can find it again. **Save your work very frequently**. Note that this is a common text file that you can also open with any text editing software afterwards.
 
-Now we will choose our working directory for this session. Go to **Session** then **Set Working Directory** then **Choose Directory** and choose the directory you unzipped your files to (it will be called finch-practical-master). 
+Now we will choose our working directory for this session. Go to **Session** then **Set Working Directory** then **Choose Directory** and choose the directory you unzipped your files to (called finch-practical-master). 
 
 Now we are ready to start.
 
-We will type code into the script window, and then execute it by sending it to the Console below. 
+We will type code into the script window, and then execute it by sending it to the Console below.
 
 As we go along, you will need to make a note of what each line of code does, so you should add annotations in the script. These are notes to yourself (and other people) and will not be read into the console as long as they are preceded by the symbol ‘#’. Do make sure that all your annotations are preceded by this symbol.  Well annotated code will really help you when you come back to it.
 
